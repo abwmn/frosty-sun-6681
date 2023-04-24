@@ -1,0 +1,15 @@
+<h1>Doctor <%= @doctor.name %>'s Show page</h1>
+
+<div id='info'>
+  <h3>Basic info</h3>
+  <p><b>Name: </b><%= @doctor.name %></p>
+  <p><b>Specialty: </b><%= @doctor.specialty %></p>
+  <p><b>University: </b><%= @doctor.university %></p>
+  <p><b>Hospital: </b><%= @doctor.hospital.name %></p>
+</div>
+
+<div id='patients'>
+  <% @doctor.patients.each do |patient| %>
+    <p><%= patient.name %></p>
+  <% end %>
+</div>
