@@ -9,7 +9,13 @@
 </div>
 
 <div id='patients'>
-  <% @doctor.patients.each do |patient| %>
-    <p><%= patient.name %></p>
+  <h3>Patients</h3>
+  <% @doctor.appointments.each do |appointment| %>
+    <div id="patient<%= appointment.patient.id %>">
+      <p>
+        <%= appointment.patient.name %>
+        <%= button_to 'Remove', appointment_path(appointment), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    </div>
   <% end %>
 </div>
